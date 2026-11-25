@@ -1,10 +1,10 @@
 # Personal Code Market scripts
 
-My current robot scripts for Code Market, with shared components, store data, and precomputed walking routes. This repository currently contains C# scripts and a floor map image.
+My current robot scripts for Code Market, with shared components, store data, and precomputed walking routes.
 
 ![World 10 floor map and interaction legend](maps/FloorMap.png)
 
-[Full-size PNG](maps/FloorMap.png) · [SVG](maps/FloorMap.svg). Decorations are omitted from the image; navigation still accounts for their occupied tiles.
+[Full-size PNG](maps/FloorMap.png) · [SVG](maps/FloorMap.svg). Decorations are omitted from the image.
 
 ## Scripts
 
@@ -30,18 +30,10 @@ maps/
   FloorMap.svg   Scalable version of the same map
 ```
 
-There are currently no JavaScript or Python script versions.
-
 ## Use in the game
 
-These `.cs` files are exports of the game's virtual scripts. Import or paste all files under `cs/` into the game's script editor, preserving their folder paths and removing the `.cs` extension. For example, `cs/Core/Components/Interactable.cs` becomes `Core/Components/Interactable`.
 
 Assign each cashier robot its matching numbered entry script. Assign the other robots `Main/Inventory` and `Main/Stocker`. Shared files under `Core/` and `Data/` supply their dependencies.
 
-Example project tree with the five `Main` scripts assigned to robots **1–5**:
-
 ![Code Market project tree and robot assignments](docs/images/robot-project-assignments.png)
 
-The included maps describe **World 10, 29 × 19 cells**. `FloorMap` stores fixture interaction points, roles, SalesFloor/Overstock classifications, and capacities. `PathMap` stores routes and parking reservations so robots can follow prepared steps.
-
-After moving fixtures or changing the store layout, save the game and regenerate **both maps** before restarting the robots. A different store needs maps generated for its own layout.
